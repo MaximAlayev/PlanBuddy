@@ -165,7 +165,6 @@ const RestarauntListBox = (props) => {
 
   return (
     <>
-        //Comment
         <div className="card-body list-wrapper">
         <a>localhost:3000/{pollId}</a>
         <ul>
