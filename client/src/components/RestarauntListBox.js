@@ -17,7 +17,8 @@ const RestarauntListBox = (props) => {
       sessions_poll_id = props.match.params.id
     }
     setPollId(sessions_poll_id)
-    Axios.get(`http://localhost:5000/api/get-restaraunt-list/${sessions_poll_id}`)
+    //http://localhost:5000
+    Axios.get(`https://main.dsm8um9dc0du4.amplifyapp.com/api/get-restaraunt-list/${sessions_poll_id}`)
     .then((response) => {
       console.log(response.data)
       setRestarauntList(response.data)
@@ -33,7 +34,7 @@ const RestarauntListBox = (props) => {
   }, []);
 
   const updateRestarauntList = () => {
-    Axios.get(`http://localhost:5000/api/get-restaraunt-list/${pollId}`)
+    Axios.get(`https://main.dsm8um9dc0du4.amplifyapp.com/api/get-restaraunt-list/${pollId}`)
     .then((response) => {
       console.log(upvoteDict)
       console.log(response.data)
@@ -46,7 +47,7 @@ const RestarauntListBox = (props) => {
 
 
   const addNewRestaraunt = (restarauntName) => {
-    Axios.post(`http://localhost:5000/api/add-restaraunt/`, {
+    Axios.post(`https://main.dsm8um9dc0du4.amplifyapp.com/api/add-restaraunt/`, {
       pollId: pollId,
       restarauntName: restarauntName
     })
@@ -63,7 +64,7 @@ const RestarauntListBox = (props) => {
   };
 
   const upvoteRestaraunt = (restarauntName) => {
-    Axios.post(`http://localhost:5000/api/upvote-restaraunt/`, {
+    Axios.post(`https://main.dsm8um9dc0du4.amplifyapp.com/api/upvote-restaraunt/`, {
       pollId: pollId,
       restarauntName: restarauntName
     })
@@ -80,7 +81,7 @@ const RestarauntListBox = (props) => {
   };
 
   const downvoteRestaraunt = (restarauntName) => {
-    Axios.post(`http://localhost:5000/api/downvote-restaraunt/`, {
+    Axios.post(`https://main.dsm8um9dc0du4.amplifyapp.com/api/downvote-restaraunt/`, {
       pollId: pollId,
       restarauntName: restarauntName
     })
